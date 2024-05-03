@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iSharee</title>
+    <link
+      rel="shortcut icon"
+      href="images/share-1-svgrepo-com.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <div class="app-left">
+        <button class="close-menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-x"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+        <div class="app-logo">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-bar-chart-2"
+          >
+            <line x1="18" y1="20" x2="18" y2="10" />
+            <line x1="12" y1="20" x2="12" y2="4" />
+            <line x1="6" y1="20" x2="6" y2="14" />
+          </svg>
+          <span>Recruiter</span>
+        </div>
+        <ul class="nav-list">
+          <li class="nav-list-item active">
+            <a class="nav-list-link" href="#" onclick="showDashboard()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-columns"
+              >
+                <path
+                  d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18"
+                />
+              </svg>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-list-link" href="#" onclick="showFiles()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-briefcase"
+              >
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+              </svg>
+              Files
+            </a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-list-link" href="#" onclick="showVideoFiles()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-file"
+              >
+                <path
+                  d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"
+                />
+                <polyline points="13 2 13 9 20 9" />
+              </svg>
+              Videos
+            </a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-list-link" href="#" onclick="showAudioFiles()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-users"
+              >
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+              Audio
+            </a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-list-link" href="#" onclick="showPhotos()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-pie-chart"
+              >
+                <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
+                <path d="M22 12A10 10 0 0 0 12 2v10z" />
+              </svg>
+              Photos
+            </a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-list-link" href="#" onclick="showUploadFiles()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-pie-chart"
+              >
+                <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
+                <path d="M22 12A10 10 0 0 0 12 2v10z" />
+              </svg>
+              Upload Files
+            </a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-list-link" href="#" onclick="showPhotoss()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-pie-chart"
+              >
+                <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
+                <path d="M22 12A10 10 0 0 0 12 2v10z" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="app-main">
+        <div class="content" id="dashboard">
+          <h1>Applications Dashboard</h1>
+          <div class="main-header-line">
+            <div class="action-buttons">
+              <button class="open-right-area">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-activity"
+                >
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+              </button>
+              <button class="menu-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-menu"
+                >
+                  <line x1="3" y1="12" x2="21" y2="12" />
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="chart-row three">
+            <div class="chart-container-wrapper">
+              <div class="chart-container">
+                <div class="chart-info-wrapper"></div>
+                <div class="chart-svg">1</div>
+              </div>
+            </div>
+            <div class="chart-container-wrapper">
+              <div class="chart-container">
+                <div class="chart-info-wrapper">2</div>
+                <div class="chart-svg"></div>
+              </div>
+            </div>
+            <div class="chart-container-wrapper">
+              <div class="chart-container">
+                <div class="chart-info-wrapper">3</div>
+                <div class="chart-svg"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="chart-row two">
+            <div class="chart-container-wrapper big">
+              <div class="chart-container">
+                <div class="chart-container-header">
+                  <h1 class="section-header">Quick Access</h1>
+                </div>
+                <div class="line-chart">
+                  <section class="content-section">
+                    <div class="access-links">
+                      <div class="access-link-wrapper">
+                        <div class="access-icon" onclick="showPhotos()">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="56"
+                            height="56"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="feather feather-image"
+                          >
+                            <rect
+                              x="3"
+                              y="3"
+                              width="18"
+                              height="18"
+                              rx="2"
+                              ry="2"
+                            />
+                            <circle cx="8.5" cy="8.5" r="1.5" />
+                            <polyline points="21 15 16 10 5 21" />
+                          </svg>
+                        </div>
+                        <span class="access-text" onclick="showPhotos()"
+                          >Images</span
+                        >
+                      </div>
+                      <div class="access-link-wrapper">
+                        <div class="access-icon" onclick="showAudioFiles()">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="56"
+                            height="56"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="feather feather-music"
+                          >
+                            <path d="M9 18V5l12-2v13" />
+                            <circle cx="6" cy="18" r="3" />
+                            <circle cx="18" cy="16" r="3" />
+                          </svg>
+                        </div>
+                        <span class="access-text">Music</span>
+                      </div>
+                      <div class="access-link-wrapper">
+                        <div class="access-icon" onclick="showVideoFiles()">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="56"
+                            height="56"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            stroke="currentColor"
+                            stroke-width="1"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="feather feather-play"
+                          >
+                            <polygon points="5 3 19 12 5 21 5 3" />
+                          </svg>
+                        </div>
+                        <span class="access-text">Video</span>
+                      </div>
+                      <div class="access-link-wrapper">
+                        <div class="access-icon" onclick="showDocs()">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="56"
+                            height="56"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="feather feather-align-left"
+                          >
+                            <line x1="17" y1="10" x2="3" y2="10" />
+                            <line x1="21" y1="6" x2="3" y2="6" />
+                            <line x1="21" y1="14" x2="3" y2="14" />
+                            <line x1="17" y1="18" x2="3" y2="18" />
+                          </svg>
+                        </div>
+                        <span class="access-text">Docs</span>
+                      </div>
+                      <div class="access-link-wrapper">
+                        <div class="access-icon" onclick="showApps()">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="56"
+                            height="56"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="feather feather-layers"
+                          >
+                            <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                            <polyline points="2 17 12 22 22 17" />
+                            <polyline points="2 12 12 17 22 12" />
+                          </svg>
+                        </div>
+                        <span class="access-text">Apps</span>
+                      </div>
+                      <div class="access-link-wrapper">
+                        <div class="access-icon" onclick="showDownload()">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="56"
+                            height="56"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="feather feather-arrow-down-circle"
+                          >
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="8 12 12 16 16 12" />
+                            <line x1="12" y1="8" x2="12" y2="16" />
+                          </svg>
+                        </div>
+                        <span class="access-text">Download</span>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+
+                <div class="chart-data-details">
+                  <div class="chart-details-header"></div>
+                </div>
+              </div>
+            </div>
+            <div class="chart-container-wrapper small">
+              <div class="chart-container">
+                <div class="chart-container-header">
+                  <h2>Acquisitions</h2>
+                  <span href="#">This month</span>
+                </div>
+
+                <div class="acquisitions-bar">5</div>
+
+                <div class="progress-bar-info"></div>
+              </div>
+
+              <div class="chart-container applicants">
+                <div class="chart-container-header">
+                  <h2>New Applicants</h2>
+                  <span>Today</span>
+                </div>
+                6
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content" id="files" style="display: none">
+          <h2>Files</h2>
+          <div id="fileList"></div>
+        </div>
+
+        <div class="content" id="videos" style="display: none">
+          <h2>Video Files</h2>
+          <div class="main-header-line">
+            <div class="action-buttons">
+              <button class="open-right-area">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-activity"
+                >
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+              </button>
+              <button class="menu-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-menu"
+                >
+                  <line x1="3" y1="12" x2="21" y2="12" />
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div id="videofileList"></div>
+        </div>
+
+        <div class="content" id="audios" style="display: none">
+          <h2>Audio Files</h2>
+          <div class="main-header-line">
+            <div class="action-buttons">
+              <button class="open-right-area">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-activity"
+                >
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+              </button>
+              <button class="menu-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-menu"
+                >
+                  <line x1="3" y1="12" x2="21" y2="12" />
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div id="audiofileList"></div>
+        </div>
+
+        <div class="content" id="photos" style="display: none">
+          <h2>Photos</h2>
+          <div class="main-header-line">
+            <div class="action-buttons">
+              <button class="open-right-area">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-activity"
+                >
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+              </button>
+              <button class="menu-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-menu"
+                >
+                  <line x1="3" y1="12" x2="21" y2="12" />
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div id="photosfileList"></div>
+        </div>
+
+        <div class="content" id="upload" style="display: none">
+          <h2>Upload Files</h2>
+          <div class="main-header-line">
+            <div class="action-buttons">
+              <button class="open-right-area">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-activity"
+                >
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+              </button>
+              <button class="menu-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-menu"
+                >
+                  <line x1="3" y1="12" x2="21" y2="12" />
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="content" id="uploadContainer">
+            <input type="file" id="fileInput" />
+            <button onclick="uploadFile()">Upload</button>
+          </div>
+
+          <div id="uploadMessage" style="display: block"></div>
+          <div id="progressBarContainer" style="display: block">
+            <div id="progressBar"></div>
+          </div>
+        </div>
+
+        <div class="content" id="settings" style="display: none">
+          <h2>Settings</h2>
+          <!-- Settings content goes here -->
+        </div>
+      </div>
+    </div>
+
+    <div class="app-right">
+      <button class="close-right">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-x"
+        >
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+      <div class="profile-box">
+        <div class="profile-photo-wrapper">
+          <img
+            src="data:image/jpeg;base64,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"
+            alt="profile"
+          />
+          <!-- <img src="/work/passport.png" alt=""> -->
+        </div>
+        <p class="profile-text">George Michaels</p>
+        <p class="profile-subtext">Owner</p>
+        <a href="#" id="log-12" onclick="logout()">logout</a>
+      </div>
+
+      <div class="app-right-content">
+        <div class="app-right-section">
+          <div class="app-right-section-header">
+            <h2>Messages</h2>
+          </div>
+          <div class="message-line">
+            <div class="message-text-wrapper"></div>
+          </div>
+          <div class="message-line">
+            <div class="message-text-wrapper"></div>
+          </div>
+          <div class="message-line">
+            <div class="message-text-wrapper"></div>
+          </div>
+        </div>
+        <div class="app-right-section">
+          <div class="app-right-section-header">
+            <h2>Activity</h2>
+            <span class="notification-active">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-bell"
+              >
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+              </svg>
+            </span>
+          </div>
+          <div class="activity-line">
+            <div class="activity-text-wrapper">
+              <div
+                class="content"
+                id="recentlyuploadedfiles"
+                style="display: block"
+              >
+                <h4>Recently Uploaded Files</h4>
+                <div id="recentlyUploadedfileList"></div>
+              </div>
+            </div>
+          </div>
+          <div class="activity-line"></div>
+          <div class="activity-line"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+      // fetch("https://10cc-196-216-86-77.ngrok-free.app/files")
+      fetch("http://192.168.74.8:5000/files")
+        // fetch("https://panther-dynamic-previously.ngrok-free.app/files")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.text(); // Instead of response.json()
+        })
+        .then((data) => {
+          try {
+            const jsonData = JSON.parse(data);
+            const fileList = document.getElementById("fileList");
+
+            jsonData.files.forEach((file) => {
+              const card = document.createElement("div");
+              card.className = "card";
+              const icon = file.icon_data
+                ? `<img src="data:image/png;base64,${file.icon_data}" alt="${file.filename}">`
+                : "";
+              const downloadLink = `<div>${icon} <a id="lA-21" href="http://localhost:5000/files/${file.id}" download>${file.filename}</a></div>`;
+              card.innerHTML = downloadLink;
+
+              // Determine file type and append to the appropriate div
+              const fileExtension = file.filename
+                .split(".")
+                .pop()
+                .toLowerCase();
+              if (["mp4", "avi", "mov"].includes(fileExtension)) {
+                const videoFileList = document.getElementById("videofileList");
+                videoFileList.appendChild(card);
+              } else if (["mp3", "wav", "ogg"].includes(fileExtension)) {
+                const audioFileList = document.getElementById("audiofileList");
+                audioFileList.appendChild(card);
+              } else if (["jpg", "jpeg", "png"].includes(fileExtension)) {
+                const photosFileList =
+                  document.getElementById("photosfileList");
+                photosFileList.appendChild(card);
+              } else {
+                // For all other files, append them to the fileList div
+                fileList.appendChild(card);
+              }
+            });
+          } catch (error) {
+            console.error("Error parsing JSON response:", error);
+          }
+        })
+        .catch((error) => console.error("Error fetching files:", error));
+
+      // Function to display success message
+      function displaySuccessMessage(message) {
+        const uploadMessage = document.getElementById("uploadMessage");
+        uploadMessage.textContent = message;
+        uploadMessage.className = "success";
+        uploadMessage.style.display = "block";
+        progressBarContainer.style.display = "block";
+
+        // Hide the success message after 5 seconds
+        setTimeout(function () {
+          uploadMessage.style.display = "none";
+        }, 5000); // 5000 milliseconds = 5 seconds
+      }
+
+      // Function to display error message
+      function displayErrorMessage(message) {
+        const uploadMessage = document.getElementById("uploadMessage");
+        uploadMessage.textContent = message;
+        uploadMessage.className = "error";
+        uploadMessage.style.display = "block";
+      }
+
+      function uploadFile() {
+        const fileInput = document.getElementById("fileInput");
+        const file = fileInput.files[0];
+
+        if (file) {
+          const progressBarContainer = document.getElementById(
+            "progressBarContainer"
+          );
+          progressBarContainer.style.display = "block"; // Show the progress bar container
+
+          const formData = new FormData();
+          formData.append("file", file);
+
+          const xhr = new XMLHttpRequest();
+          xhr.open("POST", "http://192.168.74.8:5000/upload", true);
+
+          // Track upload progress
+          xhr.upload.onprogress = function (event) {
+            if (event.lengthComputable) {
+              const percentComplete = (event.loaded / event.total) * 100;
+              const progressBar = document.getElementById("progressBar");
+              progressBar.style.width = percentComplete + "%";
+            }
+          };
+
+          xhr.onload = function () {
+            if (xhr.status === 200) {
+              // File uploaded successfully
+              displaySuccessMessage("File uploaded successfully");
+
+              // Hide the progress bar after 5 seconds
+              setTimeout(function () {
+                progressBarContainer.style.display = "none";
+              }, 5000);
+
+              // Add the recently uploaded file to the recentlyUploadedfileList div
+              const recentlyUploadedfileList = document.getElementById(
+                "recentlyUploadedfileList"
+              );
+              const fileItem = document.createElement("div");
+              fileItem.textContent = file.name; // You can customize this to display more information about the file
+              recentlyUploadedfileList.appendChild(fileItem);
+
+              // Show the recently uploaded files section
+              document.getElementById("recentlyuploadedfiles").style.display =
+                "block";
+            } else {
+              // Error uploading file
+              displayErrorMessage("Error uploading file");
+            }
+          };
+
+          xhr.onerror = function () {
+            // Error uploading file
+            displayErrorMessage("Error uploading file");
+          };
+
+          xhr.send(formData);
+        } else {
+          console.error("No file selected.");
+        }
+      }
+    </script>
+  </body>
+</html>
