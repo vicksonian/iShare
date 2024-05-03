@@ -178,7 +178,7 @@
             </a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-list-link" href="#" onclick="showPhotoss()">
+            <a class="nav-list-link" href="#" onclick="showPhotos()">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -717,9 +717,7 @@
     <script src="script.js"></script>
 
     <script>
-      // fetch("https://10cc-196-216-86-77.ngrok-free.app/files")
-      fetch("http://192.168.74.8:5000/files")
-        // fetch("https://panther-dynamic-previously.ngrok-free.app/files")
+      fetch("https://test-fmju.onrender.com/files")
         .then((response) => {
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -730,16 +728,16 @@
           try {
             const jsonData = JSON.parse(data);
             const fileList = document.getElementById("fileList");
-
+    
             jsonData.files.forEach((file) => {
               const card = document.createElement("div");
               card.className = "card";
               const icon = file.icon_data
                 ? `<img src="data:image/png;base64,${file.icon_data}" alt="${file.filename}">`
                 : "";
-              const downloadLink = `<div>${icon} <a id="lA-21" href="http://localhost:5000/files/${file.id}" download>${file.filename}</a></div>`;
+              const downloadLink = `<div>${icon} <a id="lA-21" href="https://test-fmju.onrender.com/files/${file.id}" download>${file.filename}</a></div>`;
               card.innerHTML = downloadLink;
-
+    
               // Determine file type and append to the appropriate div
               const fileExtension = file.filename
                 .split(".")
@@ -765,7 +763,7 @@
           }
         })
         .catch((error) => console.error("Error fetching files:", error));
-
+    
       // Function to display success message
       function displaySuccessMessage(message) {
         const uploadMessage = document.getElementById("uploadMessage");
@@ -773,13 +771,13 @@
         uploadMessage.className = "success";
         uploadMessage.style.display = "block";
         progressBarContainer.style.display = "block";
-
+    
         // Hide the success message after 5 seconds
         setTimeout(function () {
           uploadMessage.style.display = "none";
         }, 5000); // 5000 milliseconds = 5 seconds
       }
-
+    
       // Function to display error message
       function displayErrorMessage(message) {
         const uploadMessage = document.getElementById("uploadMessage");
@@ -787,23 +785,23 @@
         uploadMessage.className = "error";
         uploadMessage.style.display = "block";
       }
-
+    
       function uploadFile() {
         const fileInput = document.getElementById("fileInput");
         const file = fileInput.files[0];
-
+    
         if (file) {
           const progressBarContainer = document.getElementById(
             "progressBarContainer"
           );
           progressBarContainer.style.display = "block"; // Show the progress bar container
-
+    
           const formData = new FormData();
           formData.append("file", file);
-
+    
           const xhr = new XMLHttpRequest();
-          xhr.open("POST", "http://192.168.74.8:5000/upload", true);
-
+          xhr.open("POST", "https://test-fmju.onrender.com/upload", true);
+    
           // Track upload progress
           xhr.upload.onprogress = function (event) {
             if (event.lengthComputable) {
@@ -812,17 +810,17 @@
               progressBar.style.width = percentComplete + "%";
             }
           };
-
+    
           xhr.onload = function () {
             if (xhr.status === 200) {
               // File uploaded successfully
               displaySuccessMessage("File uploaded successfully");
-
+    
               // Hide the progress bar after 5 seconds
               setTimeout(function () {
                 progressBarContainer.style.display = "none";
               }, 5000);
-
+    
               // Add the recently uploaded file to the recentlyUploadedfileList div
               const recentlyUploadedfileList = document.getElementById(
                 "recentlyUploadedfileList"
@@ -830,7 +828,7 @@
               const fileItem = document.createElement("div");
               fileItem.textContent = file.name; // You can customize this to display more information about the file
               recentlyUploadedfileList.appendChild(fileItem);
-
+    
               // Show the recently uploaded files section
               document.getElementById("recentlyuploadedfiles").style.display =
                 "block";
@@ -839,17 +837,18 @@
               displayErrorMessage("Error uploading file");
             }
           };
-
+    
           xhr.onerror = function () {
             // Error uploading file
             displayErrorMessage("Error uploading file");
           };
-
+    
           xhr.send(formData);
         } else {
           console.error("No file selected.");
         }
       }
     </script>
+    
   </body>
 </html>
