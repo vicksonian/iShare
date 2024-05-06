@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "gee",
+            "database": "servers_files",
+            "username": "famage",
+            "password": ".7447"
+        }
+    ]
+}
